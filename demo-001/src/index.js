@@ -5,5 +5,5 @@ import $ from 'jquery';
 $(function () {
     // 3. 实现奇偶行变色
     $('li:odd').css('background-color', 'red');
-    $('li:even').css('background-color', 'pink');
+    $('li:even').css('background-color', 'yellow');
 });

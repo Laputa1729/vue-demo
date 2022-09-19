@@ -1,20 +1,22 @@
 {
-    "name": "demo-001",
-    "version": "1.0.0",
-    "description": "---",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev123": "webpack"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "jquery": "^3.6.1"
-    },
-    "devDependencies": {
-        "webpack": "^5.42.1",
-        "webpack-cli": "^4.7.2"
-    }
+  "name": "demo-001",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev123": "webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.42.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^3.11.2"
+  }
 }

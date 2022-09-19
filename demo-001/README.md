@@ -4,7 +4,7 @@
 
 ---
 
-#### 基本用法体验
+### 基本用法体验
 
 1. 新建项目空目录，在终端运行`npm init -y`命令，初始化包管理配置文件`package.json`
 
@@ -70,3 +70,69 @@ module.exports = {
     },
 };
 ```
+
+### webpack 中的插件应用
+
+1.  `webpack-dev-server`
+
+    -   每当修改了源代码，webpack 会自动进行项目的打包和构建
+    -   `｢wds｣: webpack output is served from /`输出的资源`main.js`被放到了内存中
+
+2.  `html-webpack-plugin`
+
+    -   配置`src`目录中的`index.html`到服务根目录中
+
+**安装`webpack-dev-server`**
+
+```
+cnpm install webpack-dev-server@3.11.2 -D
+```
+
+1.  `package.json`中配置`script`
+
+    ```javascript
+    "scripts": {
+        "dev123": "webpack serve",
+    }
+    ```
+
+2.  再次运行`npm run dev123`，`webpack-dev-server`会启动一个实时打包的 http 服务
+
+    -   **_注意：_** 报错的话，重新安装相关依赖，到最新版，_例如：本次遇到`webpack-cli`报错，重新安装它到最新版`"webpack-cli": "^4.10.0"`，报错解决_
+    -   **_注意：_** `ctrl + c`可以停掉服务
+
+3.  浏览器中`http://localhost:8080`查看打包效果
+
+    -   **_注意：_** 再用`file:///`协议打开页面无效
+
+4.  资源引用路径修改为：`<script src="/main.js"></script>`
+
+    -   **_注意：_** 启动`webpack-dev-server`服务后，就要引用内存中的`main.js`才对，引用物理磁盘中的`../dist/main.js`将无效。
+
+**安装`html-webpack-plugin`**
+
+```
+cnpm install html-webpack-plugin@5.3.2 -D
+```
+
+配置`webpack.config.js`
+
+```javascript
+// 1. 导入 html-webpack-plugin 这个插件，得到插件【构造函数】
+const HtmlPlugin = require('html-webpack-plugin');
+// 2. new 构造函数，创建插件的实例对象
+const htmlPlugin = new HtmlPlugin({
+    // 指定要复制哪个页面
+    template: './src/index.html',
+    // 指定复制出来的文件名和存放路径
+    filename: './index.html',
+});
+module.exports = {
+    // 3. 插件的集合，将来 webpack 在运行时，会加载并调用这些插件
+    plugins: [htmlPlugin],
+};
+```
+
+_**到此，`index.html`和`main.js`都被复制出一个副本，写入到内存中去了，并且在服务根目录下同级。**_
+
+配完后`npm run dev123`即可在`http://localhost:8080/`直接访问到`index.html`的内容。

@@ -1,5 +1,10 @@
 // 使用 Node.js 中的导出语法，向外导出一个 webpack 的配置对象
 const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
+const htmlPlugin = new HtmlPlugin({
+    template: './src/index.html', // 指定要复制哪个页面
+    filename: './index.html', // 指定复制出来的文件名和存放路径
+});
 
 module.exports = {
     // 开发时，追求的是打包速度，一定要用 development
@@ -12,4 +17,6 @@ module.exports = {
     //     path: path.join(__dirname, './dist'), // 输出文件的存放路径
     //     filename: 'main123.js', // 输出文件的名称
     // },
+
+    plugins: [htmlPlugin],
 };
