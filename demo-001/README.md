@@ -7,12 +7,16 @@
 #### 基本用法体验
 
 1. 新建项目空目录，在终端运行`npm init -y`命令，初始化包管理配置文件`package.json`
+
 2. 运行`cnpm install jquery -S`命令，安装 `jQuery`
-   **_注意：_** `-S`即`--save`，注册到`dependencies`里，生产环境
-   &emsp;&emsp;&emsp; `-D`即`--save-dev`，注册到`devDependencies`里，仅在开发环境
+
+    - **_注意：_** `-S`即`--save`，注册到`dependencies`里，生产环境
+
+        &emsp;&emsp;&emsp; `-D`即`--save-dev`，注册到`devDependencies`里，仅在开发环境
+
 3. 此时运行页面，`ES6`语法报错`Uncaught SyntaxError:`，轮到`webpack`登场了(`https://www.npmjs.com/package/webpack`)。
 
-> 在项目中配置`webpack`
+**在项目中配置`webpack`**
 
 1. 安装`webpack`，执行：`cnpm install webpack@5.42.1 webpack-cli@4.7.2 -D`
 
@@ -51,8 +55,10 @@ module.exports = {
 执行脚本`npm run dev123`，因为这回选择的是生产模式，`main.js`被压缩混淆，具备上线资格了。
 
 2. 自定义打包的入口与出口
-   `entry`：指定打包入口，默认：`src`>`index.js`
-   `output`：指定打包出口，默认：`dist`>`main.js`
+
+    `entry`：指定打包入口，默认：`src`>`index.js`
+
+    `output`：指定打包出口，默认：`dist`>`main.js`
 
 ```javascript
 const path = require('path');
