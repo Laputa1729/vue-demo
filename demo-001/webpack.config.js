@@ -18,5 +18,22 @@ module.exports = {
     //     filename: 'main123.js', // 输出文件的名称
     // },
 
+    module: {
+        rules: [
+            // 设置不同模块需要的 loader
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+            },
+        ],
+    },
+
+    devServer: {
+        open: true, // 初次打包完成，自动打开浏览器
+        host: '127.0.0.1', // 主机地址设置
+        port: 8080, // 端口设置
+    },
+
     plugins: [htmlPlugin],
 };
