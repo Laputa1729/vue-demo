@@ -7,11 +7,12 @@ import './css/index.less';
 
 // 导入图片
 import logo from './images/logo.png';
-$('.box').attr('src', logo);
 
 // 2. 定义 jQuery 的入口函数
 $(function () {
     // 3. 实现奇偶行变色
     $('li:odd').css('background-color', 'red');
     $('li:even').css('background-color', 'yellow');
+
+    $('.box').attr('src', logo);
 });

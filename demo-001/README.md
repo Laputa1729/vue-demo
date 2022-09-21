@@ -201,3 +201,76 @@ module.exports = {
     },
 };
 ```
+
+**安装`url-loader`，处理样式中相关引用资源路径**
+
+```
+cnpm install url-loader@4.1.1 file-loader@6.2.0 -D
+```
+
+配置`webpack.config.js`
+
+```javascript
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.jpg|png|gif$/,
+                // 只处理 <= 200B 的图片文件，转换为 base64 格式
+                use: 'url-loader?limit=200',
+            },
+        ],
+    },
+};
+```
+
+**安装`babel-loader`，处理`js`中的高级语法**
+
+```
+cnpm install babel-loader@8.2.2 @babel/core@7.14.6 @babel/plugin-proposal-decorators@7.14.5 -D
+```
+
+```javascript
+{ test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
+```
+
+配置`babel.config.js`
+
+```javascript
+module.exports = {
+    // 声明 babel 可用插件
+    plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+};
+```
+
+### webpack 的发布
+
+-   **_注意：_**
+    1.  开发模式下，`index.html`和`main.js`被放到了内存中。  
+        等到要发布上线时，需要生成到物理磁盘上，才能发给后端部署上线。
+
+配置`package.json`
+
+```json
+"scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --mode production"  // 项目发布时，运行 build 命令
+}
+```
+
+`--mode`参数项用来指定`webpack`的 **_运行模式_**，`production`模式会进行**代码压缩**和**性能优化**。
+`--mode`参数项，会 **_覆盖_**`webpack.config.js`中的`mode`项。
+
+**运行**`npm run build`，输出`dist`目录如下：
+
+![a.PNG](./src/images/a.PNG)
+
+-   **_注意：_** 此时,所有类型文件全部混在一起，需要配置下`webpack.config.js`里的`output`项，添加目录，分门别类。
+
+**安装`clean-webpack-plugin`，每次`build`自动删除`dist`目录**
+
+```
+cnpm install --save-dev clean-webpack-plugin
+```
+
+-   https://www.npmjs.com/package/clean-webpack-plugin
