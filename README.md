@@ -2,7 +2,7 @@
 
 ---
 
-### vue3.0 环境搭建
+# vue3.0 环境搭建
 
 **1. 安装 `node`**  
  `node -v`  
@@ -16,3 +16,8 @@
 **3. 安装`vue`环境**  
  `cnpm i -g vue @vue/cli`  
  `vue -V`
+
+# 目录索引
+
+-   demo-001 `webpack基础`
+-   demo-002 `vue初体验`

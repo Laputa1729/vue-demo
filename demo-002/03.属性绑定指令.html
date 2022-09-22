@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./lib/vue-2.7.10.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-bind:placeholder="tips" />
+            <hr />
+            <img :src="photo" alt="" width="100" height="100" />
+            <hr />
+            <div>1 + 2 = {{ 1+2 }}</div>
+            <div>{{ tips.split('').reverse().join('') }}</div>
+            <div :title="'box' + index">这是一个 div</div>
+        </div>
+
+        <script>
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    tips: '请输入用户名',
+                    photo: 'https://sponsors.vuejs.org/images/chrome_frameworks_fund.png',
+                    index: 3,
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -258,7 +258,7 @@ module.exports = {
 }
 ```
 
-`--mode`参数项用来指定`webpack`的 **_运行模式_**，`production`模式会进行**代码压缩**和**性能优化**。
+`--mode`参数项用来指定`webpack`的 **_运行模式_**，`production`模式会进行**代码压缩**和**性能优化**。  
 `--mode`参数项，会 **_覆盖_**`webpack.config.js`中的`mode`项。
 
 **运行**`npm run build`，输出`dist`目录如下：
@@ -274,3 +274,36 @@ cnpm install --save-dev clean-webpack-plugin
 ```
 
 -   https://www.npmjs.com/package/clean-webpack-plugin
+
+### Source Map
+
+解决报错行号与源代码 **[行号不一致]** 的问题，方便定位代码。
+
+```javascript
+module.exports = {
+    // 建议仅在开发模式使用
+    mode: 'development',
+    devtool: 'eval-source-map',
+};
+```
+
+-   **_注意：_** **生产环境**，要求只定位行号，不暴露源码。
+
+```
+devtool: 'nosource-source-map',
+```
+
+### 一些杂项配置
+
+1.  配置别名`@`，指代`src`目录
+
+    -   示例：`import '@/js/test/info.js';`
+
+    ```javascript
+    resolve: {
+        alias: {
+            // 配置别名，用 @ 指代 src 目录
+            '@': path.join(__dirname, './src/'),
+        },
+    },
+    ```

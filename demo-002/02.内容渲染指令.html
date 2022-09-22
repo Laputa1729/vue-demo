@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./lib/vue-2.7.10.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-text="username"></p>
+            <p v-text="gender"></p>
+            <hr />
+            <!-- 插值表达式 -->
+            <p>姓名：{{ username }}</p>
+            <p>性别：{{ gender }}</p>
+            <hr />
+            <div>{{ info }}</div>
+            <div v-html="info"></div>
+        </div>
+
+        <script>
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    username: 'Laputa',
+                    gender: '男',
+                    info: '<h4 style="color: red; font-size: 24px;">欢迎欢迎</h4>',
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -8,6 +8,8 @@ import './css/index.less';
 // 导入图片
 import logo from './images/logo.png';
 
+console.log(logo);
+
 // 2. 定义 jQuery 的入口函数
 $(function () {
     // 3. 实现奇偶行变色
@@ -16,3 +18,7 @@ $(function () {
 
     $('.box').attr('src', logo);
 });
+
+// 配置别名：@ 表示 src 源代码目录，方便从上级往下级查找想要的资源，可以替代 ../../ 相对路径
+// 导入 src/js/test/info.js
+import '@/js/test/info.js';

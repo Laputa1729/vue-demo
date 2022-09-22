@@ -13,6 +13,10 @@ module.exports = {
     // 发布上线时，用 production，压缩资源体积，提升项目性能
     mode: 'development', // mode 用来指定构建模式，可选 development 和 production
 
+    // devtool: 'eval-source-map', // 开发模式下
+
+    // devtool: 'nosource-source-map', // 实际发布的场景，只定位行号，不暴露源码
+
     // 示例：自定义打包入出口
     // entry: path.join(__dirname, './src/index123.js'), // 入口文件路径，指定要处理哪个文件
 
@@ -48,4 +52,11 @@ module.exports = {
     },
 
     plugins: [htmlPlugin, new CleanWebpackPlugin()],
+
+    resolve: {
+        alias: {
+            // 配置别名，用 @ 指代 src 目录
+            '@': path.join(__dirname, './src/'),
+        },
+    },
 };
