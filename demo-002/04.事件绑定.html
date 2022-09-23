@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./lib/vue-2.7.10.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>count的值：{{ count }}</p>
+            <button v-on:click="add">+1</button>
+            <button @click="fn">fn</button>
+            <a
+                href="https://www.baidu.com"
+                @click.prevent="show"
+                target="_blank"
+                >跳跳跳</a
+            >
+            <hr />
+            <input type="text" @keyup.esc="clearInput" @keyup.enter="printF" />
+        </div>
+
+        <script>
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    count: 0,
+                    Laputa: 'skyyyyyyy',
+                },
+                methods: {
+                    add: function () {
+                        this.count++;
+                    },
+                    fn: function ($event) {
+                        console.log(arguments);
+                        console.log($event);
+                    },
+                    show: function () {
+                        console.log('ok');
+                    },
+                    clearInput: function (e) {
+                        e.target.value = '';
+                    },
+                    printF: function () {
+                        console.log('Enter~');
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
