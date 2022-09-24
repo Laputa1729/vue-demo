@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./lib/vue-2.7.10.js"></script>
+    </head>
+    <body>
+        <div id="app" style="width: 600px; margin: 100px auto">
+            <p>用户名：{{ username }}</p>
+            <input type="text" v-model="username" />
+            <hr />
+            <input type="text" :value="username" />
+            <hr />
+            <select name="" id="" v-model="city">
+                <option value="">请选择</option>
+                <option value="1">你</option>
+                <option value="2">我</option>
+                <option value="3">他</option>
+            </select>
+            <hr />
+            v-model 修饰符
+            <input type="text" v-model.number="n1" /> +
+            <input type="text" v-model.number="n2" /> =
+            <span>{{ n1 + n2 }}</span>
+            <hr />
+            <input type="text" v-model.trim.lazy="username" />
+        </div>
+
+        <script>
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    username: '张三',
+                    city: '2',
+                    n1: 1,
+                    n2: 2,
+                },
+                methods: {},
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/vue-2.7.10.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" style="width: 600px; margin: 100px auto;">
+        <div>
+            <span>R: </span>
+            <input type="text" v-model.number="r">
+        </div>
+        <div>
+            <span>G: </span>
+            <input type="text" v-model.number="g">
+        </div>
+        <div>
+            <span>B: </span>
+            <input type="text" v-model.number="b">
+        </div>
+        <hr>
+
+        <!-- <div class="box" :style="{ backgroundColor: `rgb(${r}, ${g}, ${b})` }">
+            {{ `rgb(${r}, ${g}, ${b})` }}
+        </div> -->
+        <div class="box" :style="{ backgroundColor: rgbStr }">{{ rgbStr }}</div>
+        <button @click="show">按钮</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                r: 100,
+                g: 200,
+                b: 254,
+            },
+            computed: {
+                // 计算属性，动态生成 rgb(x, x, x) 的字符串
+                rgbStr: function () {
+                    return `rgb(${this.r}, ${this.g}, ${this.b})`;
+                }
+            },
+            methods: {
+                show() {
+                    // console.log(`rgb(${this.r}, ${this.g}, ${this.b})`);
+                    console.log(this.rgbStr);
+                }
+            },
+        });
+
+        console.log(vm);
+    </script>
+</body>
+
+</html>

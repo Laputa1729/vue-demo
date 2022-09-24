@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/vue-2.7.10.js"></script>
+</head>
+
+<body>
+    <section id="app" style="width: 600px; margin: 100px auto;">
+        <input type="text" v-model="username">
+        <hr>
+        <input type="text" v-model="username2">
+        <hr>
+        <input type="text" v-model="info.username">
+    </section>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                username2: 'admin',
+                info: {
+                    username: 'admin-info',
+                    address: {
+                        city: '北京'
+                    }
+                }
+            },
+            watch: {
+                // 方法格式的监听器
+                username(newVal, oldVal) {
+                    console.log('监听到了：', newVal, oldVal)
+                },
+                // 对象格式的监听器，可以让监听器自动触发
+                username2: {
+                    handler: function (newVal, oldVal) {
+                        console.log(newVal, oldVal)
+                    },
+                    immediate: true  // 一进入页面就自动触发一次
+                },
+                /* info: {
+                    handler(newVal, oldVal) {
+                        console.log(newVal)
+                    },
+                    deep: true,  // 深度监听
+                }, */
+                // 深度监听方式2
+                'info.username'(newVal) {
+                    console.log(newVal)
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>
