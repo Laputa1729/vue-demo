@@ -19,5 +19,6 @@
 
 # 目录索引
 
--   demo-001 `webpack基础`
+-   [demo-001](https://github.com/Laputa1729/vue-demo/tree/main/demo-001) `webpack基础`
 -   demo-002 `vue初体验`
+-   [demo-003](https://github.com/Laputa1729/vue-demo/tree/main/demo-003) `vue-cli创建项目`
