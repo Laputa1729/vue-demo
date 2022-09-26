@@ -20,8 +20,8 @@ vue create demo-003
 
 **4.手动选择预设项**  
 
-![b.PNG](./src/assets/b.PNG)
-![c.PNG](./src/assets/c.PNG)
+![b.PNG](./src/assets/b.PNG)  
+![c.PNG](./src/assets/c.PNG)  
 ![d.PNG](./src/assets/d.PNG)
 
 **5.启动项目**
