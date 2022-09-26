@@ -1,7 +1,10 @@
 <template>
     <div class="app-container">
         <h1>App 根组件</h1>
-        <hr>
+
+        <Test info="你好"></Test>
+
+        <hr />
 
         <div class="box">
             <!-- 把 Left 组件和 Right 组件放进来 -->
@@ -14,17 +17,18 @@
 <script>
 import Left from '@/components/Left.vue';
 import Right from '@/components/Right.vue';
+import Test from '@/components/Test.vue';
 
 export default {
     data() {
-        return {}
+        return {};
     },
     // 注册私有组件
     components: {
-        "Left": Left,
-        "Right": Right,
-
-    }
+        Left: Left,
+        Right: Right,
+        Test: Test,
+    },
 };
 </script>
 

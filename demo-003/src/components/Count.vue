@@ -16,13 +16,22 @@ export default {
     // props 是自定义属性，允许使用者通过自定义属性，为当前组件指定初始值
     // props 中的数据，可以直接在模板中使用
     // props 中的数据是[只读]的。
-    props: ["init"],
+
+    // props: ['init'], // 数组形式
+    props: {
+        // 自定义属性A: { /* 配置选项 */ }
+        init: {
+            default: 0, // 默认值
+            type: Number, // 规定数据类型
+            required: true,
+        },
+    },
     methods: {
         add() {
             this.count++;
         },
         test: function () {
-            console.log("stack test");
+            console.log('stack test');
         },
     },
 };
