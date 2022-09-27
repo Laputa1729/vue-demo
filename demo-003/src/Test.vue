@@ -13,6 +13,7 @@ export default {
     // data 数据源
     // 注意：.vue 组件中的 data 不能像之前一样，写成对象形式
     // 注意：组件中的 data 必须是一个函数
+    // [函数式]
     data: function () {
         // 这个 return 出去的对象，就是数据源
         return {

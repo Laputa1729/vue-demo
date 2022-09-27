@@ -2,7 +2,8 @@
     <div class="app-container">
         <h1>App 根组件</h1>
 
-        <Test info="你好"></Test>
+        <button @click="flag = !flag">Toggle Flag</button>
+        <Test info="你好" v-if="flag"></Test>
 
         <hr />
 
@@ -21,13 +22,15 @@ import Test from '@/components/Test.vue';
 
 export default {
     data() {
-        return {};
+        return {
+            flag: true
+        };
     },
     // 注册私有组件
     components: {
-        Left: Left,
-        Right: Right,
-        Test: Test,
+        'Left': Left,
+        'Right': Right,
+        'Test': Test,
     },
 };
 </script>
