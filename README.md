@@ -22,4 +22,5 @@
 -   [demo-001](https://github.com/Laputa1729/vue-demo/tree/main/demo-001) `webpack基础`
 -   demo-002 `vue初体验`
 -   [demo-003](https://github.com/Laputa1729/vue-demo/tree/main/demo-003) `vue-cli创建项目`
--   [demo-004](https://github.com/Laputa1729/vue-demo/tree/main/demo-004) `vue-cli创建项目`
+-   [demo-004](https://github.com/Laputa1729/vue-demo/tree/main/demo-004) `组件间传值`
+-   [demo-005](https://github.com/Laputa1729/vue-demo/tree/main/demo-005) `$refs引用`
