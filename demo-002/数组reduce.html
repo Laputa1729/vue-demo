@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 【箭头函数】
+        // () => { 语句 }
+        // (参数) => { 语句 }
+        // 参数 => { 语句 }
+        // 参数 => 表达式  <===>  function(参数) { return 表达式; }
+
+
+        // 需求：state 为 true 的，累加起来
+        var amount = 0;
+        const arr = [
+            { id: 1, name: '西瓜', state: true, price: 10, count: 1 },
+            { id: 2, name: '榴莲', state: false, price: 80, count: 2 },
+            { id: 3, name: '草莓', state: true, price: 20, count: 3 },
+        ];
+        const result = arr.filter(function (item, index) {
+            return item.state;
+        });
+        result.forEach(function (item, index) {
+            amount += item.price * item.count;
+        });
+
+        console.log(amount);
+
+
+        // let result1 = arr.filter(item => item.state).reduce((amt, item) => {
+        //     return amt += item.price * item.count;
+        // }, 0);
+        // console.log(result1);
+
+
+    </script>
+</body>
+
+</html>

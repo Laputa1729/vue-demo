@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 【箭头函数】
+        // () => { 语句 }
+        // (参数) => { 语句 }
+        // 参数 => { 语句 }
+        // 参数 => 表达式  <===>  function(参数) { return 表达式; }
+
+
+        const arr = [
+            { id: 1, name: '西瓜', state: true },
+            { id: 2, name: '榴莲', state: false },
+            { id: 3, name: '草莓', state: true },
+        ];
+        // 需求：判断是否全选
+        const result = arr.every(function (item) {
+            return item.state;
+        });
+        // const result = arr.every(item => item.state);
+        console.log(result);
+    </script>
+</body>
+
+</html>
