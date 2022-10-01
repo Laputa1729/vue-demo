@@ -39,6 +39,17 @@
         // }, 0);
         // console.log(result1);
 
+        // 应用场景：求和
+        let arr1 = [7, 12, 12, 11, 5, 45, 22, 11, 78, 45, 5];
+        let a = arr.reduce((total, item, index, arr) => {
+            // total  初始值
+            // item   当前元素
+            // index  索引
+            // arr    数组对象
+            return total += item;
+        });
+        console.log(a);  // 253
+
 
     </script>
 </body>
