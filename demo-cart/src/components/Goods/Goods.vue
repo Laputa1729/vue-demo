@@ -20,7 +20,13 @@
                 <!-- 商品价格 -->
                 <span class="goods-price">￥{{ price }}</span>
                 <!-- 商品的数量 -->
-                <Counter :id="id" :num="count"></Counter>
+
+                <!-- [嵌套子组件的方式] -->
+                <!-- <Counter :id="id" :num="count"></Counter> -->
+
+                <!-- [引入插槽slot的方式] -->
+                <slot name="default123"></slot>
+
             </div>
         </div>
     </div>

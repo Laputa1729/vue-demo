@@ -3,8 +3,15 @@
 
         <Header title="购物车案例"></Header>
 
+        <!-- <Goods v-for="item in list" :key="item.id" :id="item.id" :title="item.goods_name" :pic="item.goods_img"
+            :price="item.goods_price" :state="item.goods_state" :count="item.goods_count" @state-change="getNewState">
+        </Goods> -->
+
         <Goods v-for="item in list" :key="item.id" :id="item.id" :title="item.goods_name" :pic="item.goods_img"
             :price="item.goods_price" :state="item.goods_state" :count="item.goods_count" @state-change="getNewState">
+
+            <Counter slot="default123" :num="item.goods_count" @num-change="getNewNum(item, $event)"></Counter>
+
         </Goods>
 
         <Footer :isCheckAll="checkAllState" :amount="amount" :total="total" @checkAll-change="getCheckAllState">
@@ -18,6 +25,9 @@ import axios from 'axios'
 import Header from '@/components/Header/Header.vue'
 import Goods from '@/components/Goods/Goods.vue'
 import Footer from '@/components/Footer/Footer.vue'
+
+// 导入 Counter 组件，实现 slot 的应用
+import Counter from '@/components/Counter/Counter.vue'
 
 import bus from '@/components/eventBus.js'
 
@@ -67,7 +77,8 @@ export default {
     components: {
         'Header': Header,
         'Goods': Goods,
-        'Footer': Footer
+        'Footer': Footer,
+        'Counter': Counter
     },
     methods: {
         // 请求列表
@@ -99,19 +110,23 @@ export default {
             this.list.forEach(function (item) {
                 item.goods_state = val;
             })
+        },
+        // 获取 Counter 组件发过来的最新商品数量
+        getNewNum(item, e) {
+            item.goods_count = e;
         }
     },
     created() {
         this.initCartList();
 
-        bus.$on('share', (val) => {
-            this.list.some(item => {
-                if (item.id === val.id) {
-                    item.goods_count = val.value;
-                    return true;
-                }
-            });
-        });
+        // bus.$on('share', (val) => {
+        //     this.list.some(item => {
+        //         if (item.id === val.id) {
+        //             item.goods_count = val.value;
+        //             return true;
+        //         }
+        //     });
+        // });
     }
 };
 </script>
