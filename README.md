@@ -19,10 +19,11 @@
 
 # 目录索引
 
-- [demo-001](https://github.com/Laputa1729/vue-demo/tree/main/demo-001) `webpack基础`  
-- demo-002 `vue初体验`  
-- [demo-003](https://github.com/Laputa1729/vue-demo/tree/main/demo-003) `vue-cli创建项目`  
-- [demo-004](https://github.com/Laputa1729/vue-demo/tree/main/demo-004) `组件间传值`  
-- [demo-005](https://github.com/Laputa1729/vue-demo/tree/main/demo-005) `$refs引用`  
-- [demo-006](https://github.com/Laputa1729/vue-demo/tree/main/demo-006) `动态组件、<keep-alive></keep-alive>`  
-- [demo-cart](https://github.com/Laputa1729/vue-demo/tree/main/demo-cart) `购物车案例`  
+-   [demo-001](https://github.com/Laputa1729/vue-demo/tree/main/demo-001) `webpack基础`
+-   demo-002 `vue初体验`
+-   [demo-003](https://github.com/Laputa1729/vue-demo/tree/main/demo-003) `vue-cli创建项目`
+-   [demo-004](https://github.com/Laputa1729/vue-demo/tree/main/demo-004) `组件间传值`
+-   [demo-005](https://github.com/Laputa1729/vue-demo/tree/main/demo-005) `$refs引用`
+-   [demo-006](https://github.com/Laputa1729/vue-demo/tree/main/demo-006) `动态组件、<keep-alive></keep-alive>`
+-   [demo-007](https://github.com/Laputa1729/vue-demo/tree/main/demo-007) `插槽Slot`
+-   [demo-cart](https://github.com/Laputa1729/vue-demo/tree/main/demo-cart) `购物车案例`
