@@ -1,5 +1,6 @@
 <template>
     <div class="article-container">
+        <h3 v-globalColor="'red'">Article 组件</h3>
         <!-- 文章的标题 -->
         <div class="header-box">
             <slot name="title"></slot>

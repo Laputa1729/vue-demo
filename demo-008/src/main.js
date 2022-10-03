@@ -1,21 +1,17 @@
 import Vue from 'vue'; // 得到 Vue 构造函数
 import App from './App.vue';
 
+import axios from 'axios';
+
 Vue.config.productionTip = false;
+
+axios.defaults.baseURL = 'https://www.escook.cn'; // 请求根路径
+// 在原型上挂载共享成员
+Vue.prototype.$http = axios;
+// 缺点：不利于 api 的复用
+
 // 注册全局组件
 // Vue.component('Child', Child);
-// 定义全局自定义指令
-Vue.directive('globalColor', {
-    // bind 函数只会被调用一次，dom 更新也不会再次触发
-    bind: function (el, binding) {
-        el.style.color = binding.value;
-    },
-    // 每次 dom 更新
-    update: function (el, binding) {
-        console.log(binding);
-        el.style.color = binding.value;
-    },
-});
 
 // 创建 Vue 实例对象
 new Vue({

@@ -25,5 +25,6 @@
 -   [demo-004](https://github.com/Laputa1729/vue-demo/tree/main/demo-004) `组件间传值`
 -   [demo-005](https://github.com/Laputa1729/vue-demo/tree/main/demo-005) `$refs引用`
 -   [demo-006](https://github.com/Laputa1729/vue-demo/tree/main/demo-006) `动态组件、<keep-alive></keep-alive>`
--   [demo-007](https://github.com/Laputa1729/vue-demo/tree/main/demo-007) `插槽Slot`
+-   [demo-007](https://github.com/Laputa1729/vue-demo/tree/main/demo-007) `插槽Slot、自定义指令`
 -   [demo-cart](https://github.com/Laputa1729/vue-demo/tree/main/demo-cart) `购物车案例`
+-   [demo-008](https://github.com/Laputa1729/vue-demo/tree/main/demo-008) `axios`

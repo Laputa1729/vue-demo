@@ -1,6 +1,9 @@
 <template>
     <div class="app-container">
-        <h1>App 根组件</h1>
+        <h1 v-myColor="color[1]">App 根组件</h1>
+        <p v-myColor="'green'">测试</p>
+
+        <button @click="changeColor">改变 myColor 的颜色</button>
 
         <hr>
 
@@ -44,13 +47,35 @@ import Article from '@/components/Article.vue'
 export default {
     data() {
         return {
+            color: ['blue', 'orange']
         };
+    },
+    // 私有自定义指令
+    directives: {
+        // 定义自定义指令
+        myColor: {
+            // bind 函数只会被调用一次，dom 更新也不会再次触发
+            bind: function (el, binding) {
+                el.style.color = binding.value;
+            },
+            // 每次 dom 更新
+            update: function (el, binding) {
+                console.log(binding)
+                el.style.color = binding.value;
+            }
+        }
     },
     // 注册私有组件
     components: {
         'Left': Left,
         'Article': Article
     },
+    methods: {
+        changeColor() {
+            // this.color[1] = 'green';
+            this.color = ['blue', 'green'];
+        }
+    }
 };
 </script>
 
