@@ -28,3 +28,4 @@
 -   [demo-007](https://github.com/Laputa1729/vue-demo/tree/main/demo-007) `插槽Slot、自定义指令`
 -   [demo-cart](https://github.com/Laputa1729/vue-demo/tree/main/demo-cart) `购物车案例`
 -   [demo-008](https://github.com/Laputa1729/vue-demo/tree/main/demo-008) `axios`
+-   [demo-009](https://github.com/Laputa1729/vue-demo/tree/main/demo-009) `vue-router`
