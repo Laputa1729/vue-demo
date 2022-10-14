@@ -307,3 +307,9 @@ devtool: 'nosource-source-map',
         },
     },
     ```
+    
+2.  一些`npm`命令
+
+    -   查看版本号list：`npm view webpack versions`、`npm view less-loader versions`
+    
+    
