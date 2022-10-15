@@ -5,7 +5,7 @@
             <div class="custom-control custom-checkbox">
                 <!-- 复选框 -->
                 <input type="checkbox" class="custom-control-input" :id="'cb' + id" :checked="state"
-                    @change="stateChange">
+                       @change="stateChange">
                 <label class="custom-control-label" :for="'cb' + id">
                     <!-- 商品的缩略图 -->
                     <img :src="pic" alt="">
@@ -72,7 +72,7 @@ export default {
             const newState = e.target.checked;
             // console.log(this.id);
             // 触发自定义事件（子传父）
-            this.$emit('state-change', { id: this.id, value: newState })
+            this.$emit('state-change', {id: this.id, value: newState})
         }
     },
     components: {
@@ -83,46 +83,46 @@ export default {
 
 <style lang="less" scoped>
 .goods-container {
+  display: flex;
+  padding: 10px;
+
+  + .goods-container {
+    border-top: 1px solid #efefef;
+  }
+
+  .thumb {
     display: flex;
-    padding: 10px;
+    align-items: center;
 
-    +.goods-container {
-        border-top: 1px solid #efefef;
+    img {
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+    }
+  }
+
+  .goods-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+
+    .goods-title {
+      font-weight: bold;
+      font-size: 12px;
     }
 
-    .thumb {
-        display: flex;
-        align-items: center;
+    .goods-info-bottom {
+      display: flex;
+      justify-content: space-between;
 
-        img {
-            width: 100px;
-            height: 100px;
-            margin: 0 10px;
-        }
+      .goods-price {
+        font-weight: bold;
+        color: red;
+        font-size: 13px;
+      }
     }
-
-    .goods-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 1;
-
-        .goods-title {
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        .goods-info-bottom {
-            display: flex;
-            justify-content: space-between;
-
-            .goods-price {
-                font-weight: bold;
-                color: red;
-                font-size: 13px;
-            }
-        }
-    }
+  }
 }
 </style>
 

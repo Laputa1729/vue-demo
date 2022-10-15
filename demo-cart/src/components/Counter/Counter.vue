@@ -60,14 +60,14 @@ export default {
 
 <style lang="less" scoped>
 .number-box {
-    min-width: 30px;
-    text-align: center;
-    margin: 0 5px;
-    font-size: 12px;
+  min-width: 30px;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 12px;
 }
 
 .btn-sm {
-    width: 30px;
+  width: 30px;
 }
 </style>
 

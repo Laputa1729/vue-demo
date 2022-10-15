@@ -7,8 +7,15 @@
             :price="item.goods_price" :state="item.goods_state" :count="item.goods_count" @state-change="getNewState">
         </Goods> -->
 
-        <Goods v-for="item in list" :key="item.id" :id="item.id" :title="item.goods_name" :pic="item.goods_img"
-            :price="item.goods_price" :state="item.goods_state" :count="item.goods_count" @state-change="getNewState">
+        <Goods v-for="item in list"
+               :key="item.id"
+               :id="item.id"
+               :title="item.goods_name"
+               :pic="item.goods_img"
+               :price="item.goods_price"
+               :state="item.goods_state"
+               :count="item.goods_count"
+               @state-change="getNewState">
 
             <Counter slot="default123" :num="item.goods_count" @num-change="getNewNum(item, $event)"></Counter>
 
@@ -133,8 +140,8 @@ export default {
 
 <style lang="less" scoped>
 .app-container {
-    position: relative;
-    padding-top: 45px;
-    padding-bottom: 50px;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 50px;
 }
 </style>

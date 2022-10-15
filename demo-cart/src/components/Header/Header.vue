@@ -15,20 +15,20 @@ export default {
 
 <style lang="less" scoped>
 .header-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
-    height: 45px;
+  width: 100%;
+  height: 45px;
 
-    font-size: 12px;
+  font-size: 12px;
 
-    color: #fff;
-    background-color: #1d7bff;
+  color: #fff;
+  background-color: #1d7bff;
 }
 </style>

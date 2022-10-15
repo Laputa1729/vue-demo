@@ -3,7 +3,7 @@
         <!-- 左侧的全选 -->
         <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="checkAll" :checked="isCheckAll"
-                @change="checkAllChange">
+                   @change="checkAllChange">
             <label class="custom-control-label" for="checkAll">全选</label>
         </div>
 
@@ -45,42 +45,42 @@ export default {
 
 <style lang="less" scoped>
 .footer-container {
-    font-size: 12px;
-    height: 50px;
-    width: 100%;
-    border-top: 1px solid #efefef;
-    position: fixed;
-    bottom: 0;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+  font-size: 12px;
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid #efefef;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
 }
 
 .custom-checkbox {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #checkAll {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .btn-settle {
-    height: 80%;
-    min-width: 110px;
-    border-radius: 25px;
-    font-size: 12px;
-    color: #fff;
-    background-color: #1d7bff;
-    border: 0;
+  height: 80%;
+  min-width: 110px;
+  border-radius: 25px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #1d7bff;
+  border: 0;
 }
 
 .total-price {
-    font-weight: bold;
-    font-size: 14px;
-    color: red;
+  font-weight: bold;
+  font-size: 14px;
+  color: red;
 }
 </style>
 
